@@ -25,7 +25,7 @@ class Vendor(models.Model):
     class Meta:
         db_table="Vendor_Info"
 
-
+print('added')
 if __name__ == '__main__':
         v1 = Vendor(id=101,name='Flipkart',active='YES')
         v2 = Vendor(id=102,name='Snapdeal',active='YES')
