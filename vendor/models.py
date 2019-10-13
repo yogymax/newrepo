@@ -12,7 +12,7 @@ class InActiveVendors(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(active='NO')
 
-
+print('inside vendor models..')
 
 
 class Vendor(models.Model):
