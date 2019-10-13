@@ -1,0 +1,56 @@
+
+
+FLASK
+	request.form --  DICT COMING INSIDE REQ FORM -- POST METHOD
+	request.args -- DICT COMING IN URL OF REQ  -- GET METHOD
+
+DJANGO
+	req.POST - fetch the data from django's req -- form -- method - POST
+	req.GET -- fetch the data from django's req url -- method -- GET
+
+	req.method -- to check the request type --
+		and browser can send only GET/POST
+
+		hyberplinks -- get
+		addressbar -- get
+		form's default method -- get
+		form's method can be POST- but we need to explicitly write
+		as method = "POST"
+
+
+MVC/MVT application =
+	End User -- interact
+			browser sends req -- client -- GET/POST
+					to
+				  server -- GET/POST - crud
+
+Application -- client --
+		interact
+			Can send
+				GET/POST/PUT/DELETE-----
+
+				SERVER -- GET/POST/PUT/DELETE----- TO IMPLEMENT CRUD
+
+
+
+	prod1= Product(-----------)
+	prod2= Product(-----------)
+	prod.save()
+
+	Product.objects.create(--------------------)
+
+	Product.objects.bulk_create(p1,p2,(---------))
+
+
+v1 = Vendor(name='Flipkart',active='YES')
+v2 = Vendor(name='Flipkart',active='YES')
+v3 = Vendor(name='Flipkart',active='YES')
+v4 = Vendor(name='Flipkart',active='YES')
+v5 = Vendor(name='Flipkart',active='YES')
+
+
+v2 = Vendor(id=102,name='Snapdeal',active='YES')
+v3 = Vendor(id=103,name='Amazon',active='YES')
+v1.save()
+v2.save()
+v3.save()

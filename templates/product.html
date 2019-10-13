@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Information</title>
+</head>
+<body>
+
+<h2>Product Information</h2>
+
+{{msg}}
+
+<form action="http://localhost:8000/product/save/" method="POST">
+    {% csrf_token %}
+
+    Product Id :  <input type="text" name="pid" readonly value="{{prod.id}}"> <br><br>
+    Product Name :  <input type="text" name="pnm" value="{{prod.name}}"> <br><br>
+    Product Price : <input type="text" name="ppr" value="{{prod.price}}"> <br><br>
+    Product Quantity : <input type="text" name="pqu" value="{{prod.qty}}"> <br><br>
+    Product Remarks : <input type="text" name="pre" value="{{prod.remarks}}"> <br><br>
+    Product Category : <input type="text" name="pca" value="{{prod.category}}"> <br><br>
+    Product Brand : <input type="text" name="pbr" value="{{prod.brand}}"> <br><br>
+    Product Vendor : <input type="text" name="pve" value="{{prod.vendor}}"> <br><br>
+    <input type="submit">
+</form>
+
+{% if products %}
+<table>
+        <thead>
+            <td>ID</td><td>NAME</td><td>PRICE</td><td>QTY</td>
+            <td>CAT</td><td>REMARKS</td><td>BRAND</td><td>VEN</td>
+            <td>Action</td>
+        </thead>
+
+    {% for pr in products %}
+        <tbody>
+            <td>{{pr.id}}</td><td>{{pr.name}}</td><td>{{pr.price}}</td><td>{{pr.qty}}</td>
+            <td>{{pr.category}}</td><td>{{pr.remarks}}</td><td>{{pr.brand}}</td><td>{{pr.vendor}}</td>
+            <td>
+                <a href="/product/edit/{{pr.id}}">EDIT</a> |
+                <a href="/product/delete/{{pr.id}}">DELETE</a>
+
+            </td>
+        </tbody>
+    {% endfor %}
+
+
+</table>
+    {% endif %}
+
+</body>
+</html>
